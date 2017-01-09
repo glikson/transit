@@ -6,6 +6,7 @@ The architecture of TRANSIT is shown on the following diagram:
 ![TRANSIT Architecture](transit-arch.png)
 
 In a nutshell, the data flow is as follows:
+
 1. IoT devices (simulated in Node-RED) send messages via MQTT to Watson IoT Platform.
 2. Watson IoT Platform augments messages with metadata (e.g., timestamp) and forwards them to Message Hub.
 3. An OpenWhisk feed retrieves messages from Message Hub (in small batches) and forwards them to an action sequence, comprising `transformation` and sending the results to Message Hub (different topic)
@@ -13,6 +14,7 @@ In a nutshell, the data flow is as follows:
 5. The data in Object Storage can be retrieved on-demand from a Jupyter Notebook within the Spark Service (e.g., via Spark SQL interface)
 
 In order to enable the above pipeline, the following configuration steps are needed:
+
 1. IoT Platform service instance (with a given `orgId`): `device type`, one or more devices (`id` and `token` for each)
 2. One or more devices (real or simulated), configured with the above `id`s and `token`s, configured to send MQTT messages to the `orgId` above, using a particular `event type`.
 3. A Message Hub service instance with two topics, as well as IoT Platform historical storage extension configured to save messages to the first `topic` (for a given `event type` produced by the devices)
