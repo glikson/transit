@@ -27,3 +27,5 @@ In order to enable the above pipeline, the following configuration steps are nee
 10. Message Hub bridge, configured to archive batches of messages from the second topic above into the Object Storage container above
 11. Spark Service configured to work with the object storage container above
 12. Jupyter notebook (provided in this project) to visualize the data in Object Storage using Spark SQL
+
+##### Note: the *core* of this project is the *transformation* action mentioned in item #5 above. The rest is (more or less) standard Bluemix configuration.
