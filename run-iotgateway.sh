@@ -15,7 +15,7 @@
 # limitations under the License.
 
 # This script creates a Docker container which acts as a virtual IoT
-# gateway connected to two simulated GPS sensors (reported as dev1 and dev2).
+# gateway.
 # Once running, the sensor readings are sent to Watson IoT Platform via MQTT.
 # IMPORTANT: IoT Platform credentials must be specified in 'iotp.env'
 #
@@ -23,7 +23,7 @@
 usage()
 {
 	echo Usage:
-	echo     `basename $0` 
+	echo     `basename $0` DEVICE_ID [VALUE]
 }
 
 showenv()
@@ -32,12 +32,8 @@ showenv()
 	echo DEVICE_TYPE=$DEVICE_TYPE
 	echo EVENT_TYPE=$EVENT_TYPE
 	echo MSG_FORMAT=$MSG_FORMAT
-	echo DEVICE_ID1=$DEVICE_ID1
-	echo DEVICE_ID2=$DEVICE_ID2
-	echo INTERVAL_DEV1=$INTERVAL_DEV1
-	echo INTERVAL_DEV2=$INTERVAL_DEV2
-	echo TOKEN_DEV1=$TOKEN_DEV1
-	echo TOKEN_DEV2=$TOKEN_DEV2
+	echo DEVICE_ID=$DEVICE_ID
+	echo VALUE=$VALUE
 }
 
 cleanup() 
@@ -52,12 +48,9 @@ cleanup()
 # $3 = DEVICE_TYPE
 # $4 = EVENT_TYPE
 # $5 = MSG_FORMAT
-# $6 = DEVICE_ID1
-# $7 = DEVICE_ID2
-# $8 = INTERVAL_DEV1
-# $9 = INTERVAL_DEV2
-# $10= TOKEN_DEV1
-# $11= TOKEN_DEV2
+# $6 = DEVICE_ID
+# $7 = TOKEN
+# $8 = VALUE
 customize_flows()
 {
 
@@ -89,45 +82,24 @@ then
 	cleanup $1
 	return 4
 fi
-sed -i 's/__DEVICE_ID1__/'$6'/g' $1/flows.json
+sed -i 's/__DEVICE_ID__/'$6'/g' $1/flows.json
 if [ $? -ne 0 ];
 then
 	echo Error updating ID in node-red flow
 	cleanup $1
 	return 4
 fi
-sed -i 's/__DEVICE_ID2__/'$7'/g' $1/flows.json
-if [ $? -ne 0 ];
-then
-	echo Error updating ID in node-red flow
-	cleanup $1
-	return 4
-fi
-sed -i 's/__INTERVAL_DEV1__/'$8'/g' $1/flows.json
-if [ $? -ne 0 ];
-then
-	echo Error updating interval in node-red flow
-	cleanup $1
-	return 4
-fi
-sed -i 's/__INTERVAL_DEV2__/'$9'/g' $1/flows.json
-if [ $? -ne 0 ];
-then
-	echo Error updating interval in node-red flow
-	cleanup $1
-	return 4
-fi
-sed -i 's/__TOKEN_DEV1__/'$10'/g' $1/flows_cred.json
+sed -i 's/__TOKEN__/'$7'/g' $1/flows_cred.json
 if [ $? -ne 0 ];
 then
 	echo Error updating credentials in node-red flow
 	cleanup $1
 	return 4
 fi
-sed -i 's/__TOKEN_DEV2__/'$11'/g' $1/flows_cred.json
+sed -i 's/__VALUE__/'$8'/g' $1/flows.json
 if [ $? -ne 0 ];
 then
-	echo Error updating credentials in node-red flow
+	echo Error updating value in node-red flow
 	cleanup $1
 	return 4
 fi
@@ -143,6 +115,9 @@ if [ ! -f $HOMEDIR/iotp.env ]; then
 	exit 1
 fi 
 
+# Default value. Could be overriden via iotp.env, or via command line argument.
+VALUE=30
+
 . $HOMEDIR/iotp.env
 
 DEVICE_ID=$1
@@ -153,11 +128,18 @@ then
 	usage
 	return 1
 fi
-# initialize the two device IDs associated with the two "virtual" devices
-DEVICE_ID1=${DEVICE_ID}1
-DEVICE_ID2=${DEVICE_ID}2
+if [ ! -z "$2" ];
+then
+	VALUE=$2
+fi
 
-if [ -z "$IOTP_ORG_ID" -o -z "$DEVICE_TYPE" -o -z "$EVENT_TYPE" -o -z "$MSG_FORMAT" -o -z "$DEVICE_ID1" -o -z "$DEVICE_ID2" -o -z "$INTERVAL_DEV1" -o -z "$INTERVAL_DEV2" -o -z "$TOKEN_DEV1" -o -z "$TOKEN_DEV2" ];
+# The convention is to have token in format "token-<DEVICE_ID>"
+# The token is assigned in the Watson IoT Platform when creating a device
+# Note that it is adviced to have more secure tokens (requiring changes in this script)
+
+TOKEN=token-${DEVICE_ID}
+
+if [ -z "$IOTP_ORG_ID" -o -z "$DEVICE_TYPE" -o -z "$EVENT_TYPE" -o -z "$MSG_FORMAT" -o -z "$DEVICE_ID" -o -z "$TOKEN" -o -z "$VALUE" ];
 then
 	echo Missing parameters in iotp.env
 	showenv
@@ -184,7 +166,7 @@ then
 	cleanup $DATA
 	return 3
 fi
-customize_flows $DATA $IOTP_ORG_ID $DEVICE_TYPE $EVENT_TYPE $MSG_FORMAT $DEVICE_ID1 $DEVICE_ID2 $INTERVAL_DEV1 $INTERVAL_DEV2 $TOKEN_DEV1 $TOKEN_DEV2
+customize_flows $DATA $IOTP_ORG_ID $DEVICE_TYPE $EVENT_TYPE $MSG_FORMAT $DEVICE_ID $TOKEN $VALUE
 
 sudo docker run -d -it --name=${DEVICE_ID} -P -v `realpath $DATA`:/data nodered/node-red-docker
 if [ $? -ne 0 ];

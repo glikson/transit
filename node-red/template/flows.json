@@ -2,12 +2,7 @@
     {
         "id": "fab127e9.0106e8",
         "type": "tab",
-        "label": "nrsim1"
-    },
-    {
-        "id": "15445ebd.e93bf1",
-        "type": "tab",
-        "label": "nrsim2"
+        "label": "taxi"
     },
     {
         "id": "4d828753.813a18",
@@ -15,7 +10,7 @@
         "z": "fab127e9.0106e8",
         "broker": "__IOTP_ORG_ID__.messaging.internetofthings.ibmcloud.com",
         "port": "1883",
-        "clientid": "d:__IOTP_ORG_ID__:__DEVICE_TYPE__:__DEVICE_ID1__",
+        "clientid": "d:__IOTP_ORG_ID__:__DEVICE_TYPE__:__DEVICE_ID__",
         "usetls": false,
         "verifyservercert": true,
         "compatmode": true,
@@ -28,24 +23,6 @@
         "birthTopic": "",
         "birthQos": "0",
         "birthRetain": "false",
-        "birthPayload": ""
-    },
-    {
-        "id": "80225774.ed2218",
-        "type": "mqtt-broker",
-        "z": "",
-        "broker": "__IOTP_ORG_ID__.messaging.internetofthings.ibmcloud.com",
-        "port": "1883",
-        "clientid": "d:__IOTP_ORG_ID__:__DEVICE_TYPE__:__DEVICE_ID2__",
-        "usetls": false,
-        "compatmode": true,
-        "keepalive": "60",
-        "cleansession": true,
-        "willTopic": "",
-        "willQos": "0",
-        "willPayload": "",
-        "birthTopic": "",
-        "birthQos": "0",
         "birthPayload": ""
     },
     {
@@ -69,7 +46,7 @@
         "topic": "",
         "payload": "",
         "payloadType": "num",
-        "repeat": "__INTERVAL_DEV1__",
+        "repeat": "__VALUE__",
         "crontab": "",
         "once": false,
         "x": 123.20001220703125,
@@ -110,16 +87,6 @@
         "wires": []
     },
     {
-        "id": "bd7094ff.1d9a18",
-        "type": "comment",
-        "z": "fab127e9.0106e8",
-        "name": "Configure Publish to IoT for your environment",
-        "info": "1. Double click the node.\n2. Click the edit icon next to the Server field.\n3. Update the Server name to correspond to your Watson IoT Platform organization.\n `organization_ID.messaging.internetofthings.ibmcloud.com`\n\n4. Update the Client ID with your orgainzaiton ID, device type, and device ID:\n `d:organization_ID:device_type:device_ID`\n\n5. Click the Security tab.\n6. Verify that the Username field has the value use-auth-token.\n7. Update the Password field with the Authentication Token that you saved earlier.\n8. Click Update and then OK.\n9. In the upper right corner of the Node-RED flow editor, click Deploy. ",
-        "x": 591.2000122070312,
-        "y": 207,
-        "wires": []
-    },
-    {
         "id": "e60147a7.1c9718",
         "type": "comment",
         "z": "fab127e9.0106e8",
@@ -147,107 +114,6 @@
         "info": "The Inject node allows you to inject messages into a flow, either by clicking the button on the node, or setting a time interval between injects.",
         "x": 96.20001220703125,
         "y": 202,
-        "wires": []
-    },
-    {
-        "id": "ef3e58fe.a1fda8",
-        "type": "mqtt out",
-        "z": "15445ebd.e93bf1",
-        "name": "Publish to IoT",
-        "topic": "iot-2/evt/__EVENT_TYPE__/fmt/__MSG_FORMAT__",
-        "qos": "0",
-        "retain": "false",
-        "broker": "80225774.ed2218",
-        "x": 496,
-        "y": 233,
-        "wires": []
-    },
-    {
-        "id": "615c3636.28c618",
-        "type": "inject",
-        "z": "15445ebd.e93bf1",
-        "name": "Send data",
-        "topic": "",
-        "payload": "",
-        "payloadType": "num",
-        "repeat": "__INTERVAL_DEV2__",
-        "crontab": "",
-        "once": false,
-        "x": 118,
-        "y": 225,
-        "wires": [
-            [
-                "938db53b.1ec368"
-            ]
-        ]
-    },
-    {
-        "id": "938db53b.1ec368",
-        "type": "function",
-        "z": "15445ebd.e93bf1",
-        "name": "Device payload",
-        "func": "var name1 = \"My Device2\";\nvar type1 = \"GPS\";\nvar longitude1 = [-98.49,-97.74,-96.79,-94.20,-90.19,-94.57,-87.62,-87.90,-93.26,-95.99];\nvar latitude1 = [29.42,30.26,32.77,36.37,38.62,39.09,41.87,43.03,44.97,41.25];\nvar velocity1 = context.get('velocity1')||0;\n\n\n\nvelocity1 = velocity1+1;\nif(velocity1 > 20) velocity1=0;\ncontext.set('velocity1',velocity1);\n\nvar counter1 = context.get('counter1')||0;\ncounter1 = counter1+1;\nif(counter1 > 9) counter1 = 0;\ncontext.set('counter1',counter1);\n\nmsg = {\n \tpayload: JSON.stringify(\n \t { d:{\n \"name\" : name1,\n \"location\" : \n {\n \"longitude\" : longitude1[counter1],\n \t \"latitude\" : latitude1[counter1]\n },\n \"velocity\" : velocity1,\n \t \"type\" : type1\n \t }\n \t }\n )\n}\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "x": 286,
-        "y": 68,
-        "wires": [
-            [
-                "f6e28183.25629",
-                "ef3e58fe.a1fda8"
-            ]
-        ]
-    },
-    {
-        "id": "f6e28183.25629",
-        "type": "debug",
-        "z": "15445ebd.e93bf1",
-        "name": "",
-        "active": true,
-        "console": "false",
-        "complete": "false",
-        "x": 266,
-        "y": 344,
-        "wires": []
-    },
-    {
-        "id": "1023be5f.9a0342",
-        "type": "comment",
-        "z": "15445ebd.e93bf1",
-        "name": "Configure Publish to IoT for your environment",
-        "info": "1. Double click the node.\n2. Click the edit icon next to the Server field.\n3. Update the Server name to correspond to your Watson IoT Platform organization.\n `organization_ID.messaging.internetofthings.ibmcloud.com`\n\n4. Update the Client ID with your orgainzaiton ID, device type, and device ID:\n `d:organization_ID:device_type:device_ID`\n\n5. Click the Security tab.\n6. Verify that the Username field has the value use-auth-token.\n7. Update the Password field with the Authentication Token that you saved earlier.\n8. Click Update and then OK.\n9. In the upper right corner of the Node-RED flow editor, click Deploy. ",
-        "x": 586,
-        "y": 201,
-        "wires": []
-    },
-    {
-        "id": "21c84be9.327514",
-        "type": "comment",
-        "z": "15445ebd.e93bf1",
-        "name": "Function Node",
-        "info": "The Function node allows you to pass each message though a JavaScript function.\n\nThe Javascript function creates the message payload that is sent to your Watson IoT Platform organization.",
-        "x": 287,
-        "y": 37,
-        "wires": []
-    },
-    {
-        "id": "72080dc5.67a2e4",
-        "type": "comment",
-        "z": "15445ebd.e93bf1",
-        "name": "Debug Node",
-        "info": "The Debug node causes any message to be displayed in the Debug sidebar. By default, it just displays the payload of the message, but it is possible to display the entire message object.",
-        "x": 266,
-        "y": 374,
-        "wires": []
-    },
-    {
-        "id": "4d243c02.1dc5b4",
-        "type": "comment",
-        "z": "15445ebd.e93bf1",
-        "name": "Inject Node",
-        "info": "The Inject node allows you to inject messages into a flow, either by clicking the button on the node, or setting a time interval between injects.",
-        "x": 91,
-        "y": 196,
         "wires": []
     }
 ]
