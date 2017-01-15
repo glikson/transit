@@ -34,8 +34,8 @@
         "qos": "0",
         "retain": "false",
         "broker": "4d828753.813a18",
-        "x": 501.20001220703125,
-        "y": 239,
+        "x": 486.2000274658203,
+        "y": 215,
         "wires": []
     },
     {
@@ -46,31 +46,14 @@
         "topic": "",
         "payload": "",
         "payloadType": "num",
-        "repeat": "10",
+        "repeat": "1",
         "crontab": "",
         "once": false,
         "x": 123.20001220703125,
         "y": 231,
         "wires": [
             [
-                "bca6de49.a9004"
-            ]
-        ]
-    },
-    {
-        "id": "bca6de49.a9004",
-        "type": "function",
-        "z": "fab127e9.0106e8",
-        "name": "Device payload",
-        "func": "var name1 = \"My GPS Device 1\";\nvar type1 = \"GPS\";\nvar longitude1 = [-98.49,-97.74,-96.79,-94.20,-90.19,-94.57,-87.62,-87.90,-93.26,-95.99];\nvar latitude1 = [29.42,30.26,32.77,36.37,38.62,39.09,41.87,43.03,44.97,41.25];\nvar velocity1 = context.get('velocity1')||0;\n\n\n\nvelocity1 = velocity1+1;\nif(velocity1 > __VALUE__) velocity1=0;\ncontext.set('velocity1',velocity1);\n\nvar counter1 = context.get('counter1')||0;\ncounter1 = counter1+1;\nif(counter1 > 9) counter1 = 0;\ncontext.set('counter1',counter1);\n\nmsg = {\n \tpayload: JSON.stringify(\n \t { d:{\n \"name\" : name1,\n \"location\" : \n {\n \"longitude\" : longitude1[counter1],\n \t \"latitude\" : latitude1[counter1]\n },\n \"velocity\" : velocity1,\n \t \"type\" : type1\n \t }\n \t }\n )\n}\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "x": 291.20001220703125,
-        "y": 74,
-        "wires": [
-            [
-                "92eec5a.8bb2238",
-                "ea141d55.145aa"
+                "b02fd942.601f38"
             ]
         ]
     },
@@ -82,38 +65,91 @@
         "active": true,
         "console": "false",
         "complete": "false",
-        "x": 271.20001220703125,
-        "y": 350,
+        "x": 415.2000274658203,
+        "y": 354.00001525878906,
         "wires": []
     },
     {
-        "id": "e60147a7.1c9718",
-        "type": "comment",
+        "id": "fd7bd9cf.298d58",
+        "type": "join",
         "z": "fab127e9.0106e8",
-        "name": "Function Node",
-        "info": "The Function node allows you to pass each message though a JavaScript function.\n\nThe Javascript function creates the message payload that is sent to your Watson IoT Platform organization.",
-        "x": 292.20001220703125,
-        "y": 43,
+        "name": "",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "timeout": "__INTERVAL__",
+        "count": "__INTERVAL__",
+        "x": 263.5000457763672,
+        "y": 179.39999389648438,
+        "wires": [
+            [
+                "6815ab4d.3388d4"
+            ]
+        ]
+    },
+    {
+        "id": "b02fd942.601f38",
+        "type": "file function",
+        "z": "fab127e9.0106e8",
+        "name": "Sensor reading",
+        "filename": "/data/functions/sensor_readings.js",
+        "reloadfile": true,
+        "outputs": 1,
+        "x": 140.50001525878906,
+        "y": 103.19999694824219,
+        "wires": [
+            [
+                "fd7bd9cf.298d58"
+            ]
+        ]
+    },
+    {
+        "id": "6815ab4d.3388d4",
+        "type": "file function",
+        "z": "fab127e9.0106e8",
+        "name": "Device payload",
+        "filename": "/data/functions/device_payload.js",
+        "reloadfile": true,
+        "outputs": 1,
+        "x": 377.49998474121094,
+        "y": 102.19999694824219,
+        "wires": [
+            [
+                "17492981.e4e156",
+                "82bc3348.4e14a"
+            ]
+        ]
+    },
+    {
+        "id": "17492981.e4e156",
+        "type": "debug",
+        "z": "fab127e9.0106e8",
+        "name": "",
+        "active": false,
+        "console": "false",
+        "complete": "false",
+        "x": 487.49998474121094,
+        "y": 24.4000244140625,
         "wires": []
     },
     {
-        "id": "7648b064.0f8c5",
-        "type": "comment",
+        "id": "82bc3348.4e14a",
+        "type": "file function",
         "z": "fab127e9.0106e8",
-        "name": "Debug Node",
-        "info": "The Debug node causes any message to be displayed in the Debug sidebar. By default, it just displays the payload of the message, but it is possible to display the entire message object.",
-        "x": 271.20001220703125,
-        "y": 380,
-        "wires": []
-    },
-    {
-        "id": "c87c3679.18a018",
-        "type": "comment",
-        "z": "fab127e9.0106e8",
-        "name": "Inject Node",
-        "info": "The Inject node allows you to inject messages into a flow, either by clicking the button on the node, or setting a time interval between injects.",
-        "x": 96.20001220703125,
-        "y": 202,
-        "wires": []
+        "name": "compress",
+        "filename": "/data/functions/compress.js",
+        "reloadfile": true,
+        "outputs": 1,
+        "x": 283.5000305175781,
+        "y": 286.2000274658203,
+        "wires": [
+            [
+                "ea141d55.145aa",
+                "92eec5a.8bb2238"
+            ]
+        ]
     }
 ]

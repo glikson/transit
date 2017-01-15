@@ -33,6 +33,7 @@ showenv()
 	echo EVENT_TYPE=$EVENT_TYPE
 	echo MSG_FORMAT=$MSG_FORMAT
 	echo DEVICE_ID=$DEVICE_ID
+	echo INTERVAL=$INTERVAL
 	echo VALUE=$VALUE
 }
 
@@ -48,9 +49,10 @@ cleanup()
 # $3 = DEVICE_TYPE
 # $4 = EVENT_TYPE
 # $5 = MSG_FORMAT
-# $6 = DEVICE_ID
-# $7 = TOKEN
-# $8 = VALUE
+# $6 = INTERVAL
+# $7 = DEVICE_ID
+# $8 = TOKEN
+# $9 = VALUE
 customize_flows()
 {
 
@@ -82,21 +84,35 @@ then
 	cleanup $1
 	return 4
 fi
-sed -i 's/__DEVICE_ID__/'$6'/g' $1/flows.json
+sed -i 's/__INTERVAL__/'$6'/g' $1/flows.json
+if [ $? -ne 0 ];
+then
+	echo Error updating interval in node-red flow
+	cleanup $1
+	return 4
+fi
+sed -i 's/__DEVICE_ID__/'$7'/g' $1/flows.json
 if [ $? -ne 0 ];
 then
 	echo Error updating ID in node-red flow
 	cleanup $1
 	return 4
 fi
-sed -i 's/__TOKEN__/'$7'/g' $1/flows_cred.json
+sed -i 's/__DEVICE_ID__/'$7'/g' $1/functions/device_payload.js
+if [ $? -ne 0 ];
+then
+	echo Error updating ID in node-red flow
+	cleanup $1
+	return 4
+fi
+sed -i 's/__TOKEN__/'$8'/g' $1/flows_cred.json
 if [ $? -ne 0 ];
 then
 	echo Error updating credentials in node-red flow
 	cleanup $1
 	return 4
 fi
-sed -i 's/__VALUE__/'$8'/g' $1/flows.json
+sed -i 's/__VALUE__/'$9'/g' $1/functions/sensor_readings.js
 if [ $? -ne 0 ];
 then
 	echo Error updating value in node-red flow
@@ -139,7 +155,7 @@ fi
 
 TOKEN=token-${DEVICE_ID}
 
-if [ -z "$IOTP_ORG_ID" -o -z "$DEVICE_TYPE" -o -z "$EVENT_TYPE" -o -z "$MSG_FORMAT" -o -z "$DEVICE_ID" -o -z "$TOKEN" -o -z "$VALUE" ];
+if [ -z "$IOTP_ORG_ID" -o -z "$DEVICE_TYPE" -o -z "$EVENT_TYPE" -o -z "$MSG_FORMAT" -o -z "$INTERVAL" -o -z "$DEVICE_ID" -o -z "$TOKEN" -o -z "$VALUE" ];
 then
 	echo Missing parameters in iotp.env
 	showenv
@@ -166,7 +182,7 @@ then
 	cleanup $DATA
 	return 3
 fi
-customize_flows $DATA $IOTP_ORG_ID $DEVICE_TYPE $EVENT_TYPE $MSG_FORMAT $DEVICE_ID $TOKEN $VALUE
+customize_flows $DATA $IOTP_ORG_ID $DEVICE_TYPE $EVENT_TYPE $MSG_FORMAT $INTERVAL $DEVICE_ID $TOKEN $VALUE
 
 sudo docker run -d -it --name=${DEVICE_ID} -P -v `realpath $DATA`:/data nodered/node-red-docker
 if [ $? -ne 0 ];

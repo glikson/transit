@@ -13,434 +13,241 @@
 12 silly mapToRegistry uri https://registry.npmjs.org/zlib
 13 verbose request uri https://registry.npmjs.org/zlib
 14 verbose request no auth needed
-15 info attempt registry request try #1 at 2:33:37 PM
-16 verbose request id ac9f05171ebf133a
-17 http request GET https://registry.npmjs.org/zlib
-18 http 200 https://registry.npmjs.org/zlib
-19 verbose headers { server: 'nginx/1.10.1',
-19 verbose headers   'content-type': 'application/json',
-19 verbose headers   'last-modified': 'Mon, 08 Aug 2011 18:15:58 GMT',
-19 verbose headers   etag: 'W/"4e4027de-17d3"',
-19 verbose headers   'content-encoding': 'gzip',
-19 verbose headers   'cache-control': 'max-age=300',
-19 verbose headers   'content-length': '1254',
-19 verbose headers   'accept-ranges': 'bytes',
-19 verbose headers   date: 'Thu, 12 Jan 2017 12:33:37 GMT',
-19 verbose headers   via: '1.1 varnish',
-19 verbose headers   age: '0',
-19 verbose headers   connection: 'keep-alive',
-19 verbose headers   'x-served-by': 'cache-hhn1538-HHN',
-19 verbose headers   'x-cache': 'MISS',
-19 verbose headers   'x-cache-hits': '0',
-19 verbose headers   'x-timer': 'S1484224417.907180,VS0,VE17',
-19 verbose headers   vary: 'Accept-Encoding' }
-20 silly get cb [ 200,
-20 silly get   { server: 'nginx/1.10.1',
-20 silly get     'content-type': 'application/json',
-20 silly get     'last-modified': 'Mon, 08 Aug 2011 18:15:58 GMT',
-20 silly get     etag: 'W/"4e4027de-17d3"',
-20 silly get     'content-encoding': 'gzip',
-20 silly get     'cache-control': 'max-age=300',
-20 silly get     'content-length': '1254',
-20 silly get     'accept-ranges': 'bytes',
-20 silly get     date: 'Thu, 12 Jan 2017 12:33:37 GMT',
-20 silly get     via: '1.1 varnish',
-20 silly get     age: '0',
-20 silly get     connection: 'keep-alive',
-20 silly get     'x-served-by': 'cache-hhn1538-HHN',
-20 silly get     'x-cache': 'MISS',
-20 silly get     'x-cache-hits': '0',
-20 silly get     'x-timer': 'S1484224417.907180,VS0,VE17',
-20 silly get     vary: 'Accept-Encoding' } ]
-21 verbose get saving zlib to /home/glikson/.npm/registry.npmjs.org/zlib/.cache.json
-22 silly install normalizeTree
-23 silly loadCurrentTree Finishing
-24 silly loadIdealTree Starting
-25 silly install loadIdealTree
-26 silly cloneCurrentTree Starting
-27 silly install cloneCurrentTreeToIdealTree
-28 silly cloneCurrentTree Finishing
-29 silly loadShrinkwrap Starting
-30 silly install loadShrinkwrap
-31 silly loadShrinkwrap Finishing
-32 silly loadAllDepsIntoIdealTree Starting
-33 silly install loadAllDepsIntoIdealTree
-34 silly resolveWithNewModule zlib@1.0.5 checking installable status
-35 silly cache add args [ 'zlib', null ]
-36 verbose cache add spec zlib
-37 silly cache add parsed spec Result {
-37 silly cache add   raw: 'zlib',
-37 silly cache add   scope: null,
-37 silly cache add   name: 'zlib',
-37 silly cache add   rawSpec: '',
-37 silly cache add   spec: 'latest',
-37 silly cache add   type: 'tag' }
-38 silly addNamed zlib@latest
-39 verbose addNamed "latest" is being treated as a dist-tag for zlib
-40 info addNameTag [ 'zlib', 'latest' ]
-41 silly mapToRegistry name zlib
-42 silly mapToRegistry using default registry
-43 silly mapToRegistry registry https://registry.npmjs.org/
-44 silly mapToRegistry uri https://registry.npmjs.org/zlib
-45 verbose addNameTag registry:https://registry.npmjs.org/zlib not in flight; fetching
-46 verbose get https://registry.npmjs.org/zlib not expired, no request
-47 silly addNameTag next cb for zlib with tag latest
-48 silly addNamed zlib@1.0.5
-49 verbose addNamed "1.0.5" is a plain semver version for zlib
-50 silly mapToRegistry name zlib
-51 silly mapToRegistry using default registry
-52 silly mapToRegistry registry https://registry.npmjs.org/
-53 silly mapToRegistry uri https://registry.npmjs.org/zlib
-54 verbose addRemoteTarball https://registry.npmjs.org/zlib/-/zlib-1.0.5.tgz not in flight; adding
-55 verbose addRemoteTarball [ 'https://registry.npmjs.org/zlib/-/zlib-1.0.5.tgz',
-55 verbose addRemoteTarball   '6e7c972fc371c645a6afb03ab14769def114fcc0' ]
-56 info retry fetch attempt 1 at 2:33:38 PM
-57 info attempt registry request try #1 at 2:33:38 PM
-58 http fetch GET https://registry.npmjs.org/zlib/-/zlib-1.0.5.tgz
-59 http fetch 200 https://registry.npmjs.org/zlib/-/zlib-1.0.5.tgz
-60 silly fetchAndShaCheck shasum 6e7c972fc371c645a6afb03ab14769def114fcc0
-61 verbose addTmpTarball /tmp/npm-11853-419545c8/registry.npmjs.org/zlib/-/zlib-1.0.5.tgz not in flight; adding
-62 verbose addTmpTarball already have metadata; skipping unpack for zlib@1.0.5
-63 silly cache afterAdd zlib@1.0.5
-64 verbose afterAdd /home/glikson/.npm/zlib/1.0.5/package/package.json not in flight; writing
-65 verbose afterAdd /home/glikson/.npm/zlib/1.0.5/package/package.json written
-66 silly loadAllDepsIntoIdealTree Finishing
-67 silly idealTree:prePrune template
-67 silly idealTree:prePrune ├── bignumber.js@3.0.1
-67 silly idealTree:prePrune ├── cbor@3.0.0
-67 silly idealTree:prePrune ├── commander@2.9.0
-67 silly idealTree:prePrune ├── delimit-stream@0.1.0
-67 silly idealTree:prePrune ├── graceful-readlink@1.0.1
-67 silly idealTree:prePrune ├── json-text-sequence@0.1.1
-67 silly idealTree:prePrune ├── nofilter@0.0.3
-67 silly idealTree:prePrune └── zlib@1.0.5
-68 silly loadIdealTree Finishing
-69 silly currentTree template
-69 silly currentTree ├── bignumber.js@3.0.1
-69 silly currentTree ├── cbor@3.0.0
-69 silly currentTree ├── commander@2.9.0
-69 silly currentTree ├── delimit-stream@0.1.0
-69 silly currentTree ├── graceful-readlink@1.0.1
-69 silly currentTree ├── json-text-sequence@0.1.1
-69 silly currentTree └── nofilter@0.0.3
-70 silly idealTree template
-70 silly idealTree ├── bignumber.js@3.0.1
-70 silly idealTree ├── cbor@3.0.0
-70 silly idealTree ├── commander@2.9.0
-70 silly idealTree ├── delimit-stream@0.1.0
-70 silly idealTree ├── graceful-readlink@1.0.1
-70 silly idealTree ├── json-text-sequence@0.1.1
-70 silly idealTree ├── nofilter@0.0.3
-70 silly idealTree └── zlib@1.0.5
-71 silly generateActionsToTake Starting
-72 silly install generateActionsToTake
-73 silly generateActionsToTake Finishing
-74 silly diffTrees action count 2
-75 silly diffTrees update cbor@3.0.0
-76 silly diffTrees add zlib@1.0.5
-77 silly decomposeActions action count 16
-78 silly decomposeActions fetch cbor@3.0.0
-79 silly decomposeActions extract cbor@3.0.0
-80 silly decomposeActions test cbor@3.0.0
-81 silly decomposeActions preinstall cbor@3.0.0
-82 silly decomposeActions build cbor@3.0.0
-83 silly decomposeActions install cbor@3.0.0
-84 silly decomposeActions postinstall cbor@3.0.0
-85 silly decomposeActions finalize cbor@3.0.0
-86 silly decomposeActions fetch zlib@1.0.5
-87 silly decomposeActions extract zlib@1.0.5
-88 silly decomposeActions test zlib@1.0.5
-89 silly decomposeActions preinstall zlib@1.0.5
-90 silly decomposeActions build zlib@1.0.5
-91 silly decomposeActions install zlib@1.0.5
-92 silly decomposeActions postinstall zlib@1.0.5
-93 silly decomposeActions finalize zlib@1.0.5
-94 silly executeActions Starting
-95 silly install executeActions
-96 silly doSerial global-install 0
-97 silly doParallel fetch 2
-98 verbose lock using /home/glikson/.npm/_locks/staging-8690739665a1a624.lock for /home/glikson/transit/node-red/template/node_modules/.staging
-99 silly doParallel extract 2
-100 silly extract cbor@3.0.0
-101 silly extract zlib@1.0.5
-102 verbose unbuild node_modules/.staging/zlib-c66fb048
-103 verbose unbuild node_modules/.staging/cbor-f1f195e9
-104 silly gentlyRm /home/glikson/transit/node-red/template/node_modules/.staging/zlib-c66fb048 is being purged from base /home/glikson/transit/node-red/template
+15 info attempt registry request try #1 at 4:31:24 PM
+16 verbose request id 5395368696f5b1a1
+17 verbose etag W/"4e4027de-17d3"
+18 verbose lastModified Mon, 08 Aug 2011 18:15:58 GMT
+19 http request GET https://registry.npmjs.org/zlib
+20 http 304 https://registry.npmjs.org/zlib
+21 verbose headers { date: 'Sun, 15 Jan 2017 14:31:25 GMT',
+21 verbose headers   via: '1.1 varnish',
+21 verbose headers   'cache-control': 'max-age=300',
+21 verbose headers   etag: 'W/"4e4027de-17d3"',
+21 verbose headers   age: '0',
+21 verbose headers   connection: 'keep-alive',
+21 verbose headers   'x-served-by': 'cache-hhn1538-HHN',
+21 verbose headers   'x-cache': 'MISS',
+21 verbose headers   'x-cache-hits': '0',
+21 verbose headers   'x-timer': 'S1484490685.027770,VS0,VE1',
+21 verbose headers   vary: 'Accept-Encoding' }
+22 silly get cb [ 304,
+22 silly get   { date: 'Sun, 15 Jan 2017 14:31:25 GMT',
+22 silly get     via: '1.1 varnish',
+22 silly get     'cache-control': 'max-age=300',
+22 silly get     etag: 'W/"4e4027de-17d3"',
+22 silly get     age: '0',
+22 silly get     connection: 'keep-alive',
+22 silly get     'x-served-by': 'cache-hhn1538-HHN',
+22 silly get     'x-cache': 'MISS',
+22 silly get     'x-cache-hits': '0',
+22 silly get     'x-timer': 'S1484490685.027770,VS0,VE1',
+22 silly get     vary: 'Accept-Encoding' } ]
+23 verbose etag https://registry.npmjs.org/zlib from cache
+24 verbose get saving zlib to /home/glikson/.npm/registry.npmjs.org/zlib/.cache.json
+25 silly install normalizeTree
+26 silly loadCurrentTree Finishing
+27 silly loadIdealTree Starting
+28 silly install loadIdealTree
+29 silly cloneCurrentTree Starting
+30 silly install cloneCurrentTreeToIdealTree
+31 silly cloneCurrentTree Finishing
+32 silly loadShrinkwrap Starting
+33 silly install loadShrinkwrap
+34 silly loadShrinkwrap Finishing
+35 silly loadAllDepsIntoIdealTree Starting
+36 silly install loadAllDepsIntoIdealTree
+37 silly resolveWithNewModule zlib@1.0.5 checking installable status
+38 silly cache add args [ 'zlib', null ]
+39 verbose cache add spec zlib
+40 silly cache add parsed spec Result {
+40 silly cache add   raw: 'zlib',
+40 silly cache add   scope: null,
+40 silly cache add   name: 'zlib',
+40 silly cache add   rawSpec: '',
+40 silly cache add   spec: 'latest',
+40 silly cache add   type: 'tag' }
+41 silly addNamed zlib@latest
+42 verbose addNamed "latest" is being treated as a dist-tag for zlib
+43 info addNameTag [ 'zlib', 'latest' ]
+44 silly mapToRegistry name zlib
+45 silly mapToRegistry using default registry
+46 silly mapToRegistry registry https://registry.npmjs.org/
+47 silly mapToRegistry uri https://registry.npmjs.org/zlib
+48 verbose addNameTag registry:https://registry.npmjs.org/zlib not in flight; fetching
+49 verbose get https://registry.npmjs.org/zlib not expired, no request
+50 silly addNameTag next cb for zlib with tag latest
+51 silly addNamed zlib@1.0.5
+52 verbose addNamed "1.0.5" is a plain semver version for zlib
+53 silly cache afterAdd zlib@1.0.5
+54 verbose afterAdd /home/glikson/.npm/zlib/1.0.5/package/package.json not in flight; writing
+55 verbose afterAdd /home/glikson/.npm/zlib/1.0.5/package/package.json written
+56 silly loadAllDepsIntoIdealTree Finishing
+57 silly idealTree:prePrune template
+57 silly idealTree:prePrune ├── node-red-contrib-file-function@1.1.2
+57 silly idealTree:prePrune └── zlib@1.0.5
+58 silly loadIdealTree Finishing
+59 silly currentTree template
+59 silly currentTree └── node-red-contrib-file-function@1.1.2
+60 silly idealTree template
+60 silly idealTree ├── node-red-contrib-file-function@1.1.2
+60 silly idealTree └── zlib@1.0.5
+61 silly generateActionsToTake Starting
+62 silly install generateActionsToTake
+63 silly generateActionsToTake Finishing
+64 silly diffTrees action count 2
+65 silly diffTrees update node-red-contrib-file-function@1.1.2
+66 silly diffTrees add zlib@1.0.5
+67 silly decomposeActions action count 16
+68 silly decomposeActions fetch node-red-contrib-file-function@1.1.2
+69 silly decomposeActions extract node-red-contrib-file-function@1.1.2
+70 silly decomposeActions test node-red-contrib-file-function@1.1.2
+71 silly decomposeActions preinstall node-red-contrib-file-function@1.1.2
+72 silly decomposeActions build node-red-contrib-file-function@1.1.2
+73 silly decomposeActions install node-red-contrib-file-function@1.1.2
+74 silly decomposeActions postinstall node-red-contrib-file-function@1.1.2
+75 silly decomposeActions finalize node-red-contrib-file-function@1.1.2
+76 silly decomposeActions fetch zlib@1.0.5
+77 silly decomposeActions extract zlib@1.0.5
+78 silly decomposeActions test zlib@1.0.5
+79 silly decomposeActions preinstall zlib@1.0.5
+80 silly decomposeActions build zlib@1.0.5
+81 silly decomposeActions install zlib@1.0.5
+82 silly decomposeActions postinstall zlib@1.0.5
+83 silly decomposeActions finalize zlib@1.0.5
+84 silly executeActions Starting
+85 silly install executeActions
+86 silly doSerial global-install 0
+87 silly doParallel fetch 2
+88 verbose lock using /home/glikson/.npm/_locks/staging-8690739665a1a624.lock for /home/glikson/transit/node-red/template/node_modules/.staging
+89 silly doParallel extract 2
+90 silly extract node-red-contrib-file-function@1.1.2
+91 silly extract zlib@1.0.5
+92 verbose unbuild node_modules/.staging/node-red-contrib-file-function-ead16647
+93 verbose unbuild node_modules/.staging/zlib-c66fb048
+94 silly gentlyRm /home/glikson/transit/node-red/template/node_modules/.staging/node-red-contrib-file-function-ead16647 is being purged from base /home/glikson/transit/node-red/template
+95 verbose gentlyRm don't care about contents; nuking /home/glikson/transit/node-red/template/node_modules/.staging/node-red-contrib-file-function-ead16647
+96 silly gentlyRm /home/glikson/transit/node-red/template/node_modules/.staging/zlib-c66fb048 is being purged from base /home/glikson/transit/node-red/template
+97 verbose gentlyRm don't care about contents; nuking /home/glikson/transit/node-red/template/node_modules/.staging/zlib-c66fb048
+98 verbose tar unpack /home/glikson/.npm/node-red-contrib-file-function/1.1.2/package.tgz
+99 verbose tar unpacking to /home/glikson/transit/node-red/template/node_modules/.staging/node-red-contrib-file-function-ead16647
+100 silly gentlyRm /home/glikson/transit/node-red/template/node_modules/.staging/node-red-contrib-file-function-ead16647 is being purged
+101 verbose gentlyRm don't care about contents; nuking /home/glikson/transit/node-red/template/node_modules/.staging/node-red-contrib-file-function-ead16647
+102 verbose tar unpack /home/glikson/.npm/zlib/1.0.5/package.tgz
+103 verbose tar unpacking to /home/glikson/transit/node-red/template/node_modules/.staging/zlib-c66fb048
+104 silly gentlyRm /home/glikson/transit/node-red/template/node_modules/.staging/zlib-c66fb048 is being purged
 105 verbose gentlyRm don't care about contents; nuking /home/glikson/transit/node-red/template/node_modules/.staging/zlib-c66fb048
-106 verbose tar unpack /home/glikson/.npm/zlib/1.0.5/package.tgz
-107 verbose tar unpacking to /home/glikson/transit/node-red/template/node_modules/.staging/zlib-c66fb048
-108 silly gentlyRm /home/glikson/transit/node-red/template/node_modules/.staging/zlib-c66fb048 is being purged
-109 verbose gentlyRm don't care about contents; nuking /home/glikson/transit/node-red/template/node_modules/.staging/zlib-c66fb048
-110 silly gentlyRm /home/glikson/transit/node-red/template/node_modules/.staging/cbor-f1f195e9 is being purged from base /home/glikson/transit/node-red/template
-111 verbose gentlyRm don't care about contents; nuking /home/glikson/transit/node-red/template/node_modules/.staging/cbor-f1f195e9
-112 silly gunzTarPerm modes [ '775', '664' ]
-113 verbose tar unpack /home/glikson/.npm/cbor/3.0.0/package.tgz
-114 verbose tar unpacking to /home/glikson/transit/node-red/template/node_modules/.staging/cbor-f1f195e9
-115 silly gentlyRm /home/glikson/transit/node-red/template/node_modules/.staging/cbor-f1f195e9 is being purged
-116 verbose gentlyRm don't care about contents; nuking /home/glikson/transit/node-red/template/node_modules/.staging/cbor-f1f195e9
-117 silly gunzTarPerm modes [ '775', '664' ]
-118 silly gunzTarPerm extractEntry .gitignore
-119 silly gunzTarPerm modified mode [ '.gitignore', 420, 436 ]
-120 silly gunzTarPerm extractEntry package.json
-121 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
-122 silly gunzTarPerm extractEntry configure
-123 silly gunzTarPerm modified mode [ 'configure', 493, 509 ]
-124 silly gunzTarPerm extractEntry index.js
-125 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
-126 silly gunzTarPerm extractEntry .npmignore
-127 silly gunzTarPerm modified mode [ '.npmignore', 420, 436 ]
-128 silly gunzTarPerm extractEntry README.md
-129 silly gunzTarPerm modified mode [ 'README.md', 420, 436 ]
-130 silly gunzTarPerm extractEntry LICENSE
-131 silly gunzTarPerm modified mode [ 'LICENSE', 420, 436 ]
-132 silly gunzTarPerm extractEntry Makefile
-133 silly gunzTarPerm modified mode [ 'Makefile', 420, 436 ]
-134 silly gunzTarPerm extractEntry bin/cbor2comment
-135 silly gunzTarPerm modified mode [ 'bin/cbor2comment', 493, 509 ]
-136 silly gunzTarPerm extractEntry bin/cbor2diag
-137 silly gunzTarPerm modified mode [ 'bin/cbor2diag', 493, 509 ]
-138 silly gunzTarPerm extractEntry package.json
-139 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
-140 silly gunzTarPerm extractEntry README.md
-141 silly gunzTarPerm modified mode [ 'README.md', 420, 436 ]
-142 silly gunzTarPerm extractEntry bin/cbor2json
-143 silly gunzTarPerm modified mode [ 'bin/cbor2json', 493, 509 ]
-144 silly gunzTarPerm extractEntry bin/json2cbor
-145 silly gunzTarPerm modified mode [ 'bin/json2cbor', 493, 509 ]
-146 silly gunzTarPerm extractEntry wscript
-147 silly gunzTarPerm modified mode [ 'wscript', 420, 436 ]
-148 silly gunzTarPerm extractEntry lib/zlib.js
-149 silly gunzTarPerm modified mode [ 'lib/zlib.js', 420, 436 ]
-150 silly gunzTarPerm extractEntry .dockerignore
-151 silly gunzTarPerm modified mode [ '.dockerignore', 420, 436 ]
-152 silly gunzTarPerm extractEntry src/node-zlib.cc
-153 silly gunzTarPerm modified mode [ 'src/node-zlib.cc', 420, 436 ]
-154 silly gunzTarPerm extractEntry test/deflate.test.js
-155 silly gunzTarPerm modified mode [ 'test/deflate.test.js', 420, 436 ]
-156 silly gunzTarPerm extractEntry test/inflate.test.js
-157 silly gunzTarPerm modified mode [ 'test/inflate.test.js', 420, 436 ]
-158 silly gunzTarPerm extractEntry .jsdoc.conf
-159 silly gunzTarPerm modified mode [ '.jsdoc.conf', 420, 436 ]
-160 silly gunzTarPerm extractEntry .travis.yml
-161 silly gunzTarPerm modified mode [ '.travis.yml', 420, 436 ]
-162 silly gunzTarPerm extractEntry .waiting.html
-163 silly gunzTarPerm modified mode [ '.waiting.html', 420, 436 ]
-164 silly gunzTarPerm extractEntry Dockerfile
-165 silly gunzTarPerm modified mode [ 'Dockerfile', 420, 436 ]
-166 silly gunzTarPerm extractEntry LICENSE.md
-167 silly gunzTarPerm modified mode [ 'LICENSE.md', 420, 436 ]
-168 silly gunzTarPerm extractEntry .fnmrc
-169 silly gunzTarPerm modified mode [ '.fnmrc', 420, 436 ]
-170 silly gunzTarPerm extractEntry .editorconfig
-171 silly gunzTarPerm modified mode [ '.editorconfig', 420, 436 ]
-172 silly gunzTarPerm extractEntry docs/diagnose.js.html
-173 silly gunzTarPerm modified mode [ 'docs/diagnose.js.html', 420, 436 ]
-174 silly gunzTarPerm extractEntry docs/Commented.html
-175 silly gunzTarPerm modified mode [ 'docs/Commented.html', 420, 436 ]
-176 silly gunzTarPerm extractEntry docs/Diagnose.html
-177 silly gunzTarPerm modified mode [ 'docs/Diagnose.html', 420, 436 ]
-178 silly gunzTarPerm extractEntry docs/Encoder.html
-179 silly gunzTarPerm modified mode [ 'docs/Encoder.html', 420, 436 ]
-180 silly gunzTarPerm extractEntry docs/Simple.html
-181 silly gunzTarPerm modified mode [ 'docs/Simple.html', 420, 436 ]
-182 silly gunzTarPerm extractEntry docs/Tagged.html
-183 silly gunzTarPerm modified mode [ 'docs/Tagged.html', 420, 436 ]
-184 silly gunzTarPerm extractEntry docs/commented.js.html
-185 silly gunzTarPerm modified mode [ 'docs/commented.js.html', 420, 436 ]
-186 silly gunzTarPerm extractEntry docs/decoder.js.html
-187 silly gunzTarPerm modified mode [ 'docs/decoder.js.html', 420, 436 ]
-188 silly gunzTarPerm extractEntry docs/Decoder.html
-189 silly gunzTarPerm modified mode [ 'docs/Decoder.html', 420, 436 ]
-190 silly gunzTarPerm extractEntry docs/encoder.js.html
-191 silly gunzTarPerm modified mode [ 'docs/encoder.js.html', 420, 436 ]
-192 silly gunzTarPerm extractEntry docs/fonts/OpenSans-LightItalic-webfont.svg
-193 silly gunzTarPerm modified mode [ 'docs/fonts/OpenSans-LightItalic-webfont.svg', 420, 436 ]
-194 silly gunzTarPerm extractEntry docs/fonts/OpenSans-Bold-webfont.eot
-195 silly gunzTarPerm modified mode [ 'docs/fonts/OpenSans-Bold-webfont.eot', 420, 436 ]
-196 silly gunzTarPerm extractEntry docs/fonts/OpenSans-Bold-webfont.woff
-197 silly gunzTarPerm modified mode [ 'docs/fonts/OpenSans-Bold-webfont.woff', 420, 436 ]
-198 silly gunzTarPerm extractEntry docs/fonts/OpenSans-BoldItalic-webfont.eot
-199 silly gunzTarPerm modified mode [ 'docs/fonts/OpenSans-BoldItalic-webfont.eot', 420, 436 ]
-200 silly gentlyRm /home/glikson/transit/node-red/template/node_modules/.staging/zlib-c66fb048/node_modules is being purged
-201 verbose gentlyRm don't care about contents; nuking /home/glikson/transit/node-red/template/node_modules/.staging/zlib-c66fb048/node_modules
-202 silly gunzTarPerm extractEntry docs/fonts/OpenSans-BoldItalic-webfont.svg
-203 silly gunzTarPerm modified mode [ 'docs/fonts/OpenSans-BoldItalic-webfont.svg', 420, 436 ]
-204 silly gunzTarPerm extractEntry docs/fonts/OpenSans-BoldItalic-webfont.woff
-205 silly gunzTarPerm modified mode [ 'docs/fonts/OpenSans-BoldItalic-webfont.woff', 420, 436 ]
-206 silly gunzTarPerm extractEntry docs/fonts/OpenSans-Italic-webfont.eot
-207 silly gunzTarPerm modified mode [ 'docs/fonts/OpenSans-Italic-webfont.eot', 420, 436 ]
-208 silly gunzTarPerm extractEntry docs/fonts/OpenSans-Italic-webfont.svg
-209 silly gunzTarPerm modified mode [ 'docs/fonts/OpenSans-Italic-webfont.svg', 420, 436 ]
-210 silly gunzTarPerm extractEntry docs/fonts/OpenSans-Italic-webfont.woff
-211 silly gunzTarPerm modified mode [ 'docs/fonts/OpenSans-Italic-webfont.woff', 420, 436 ]
-212 silly gunzTarPerm extractEntry docs/fonts/OpenSans-Light-webfont.eot
-213 silly gunzTarPerm modified mode [ 'docs/fonts/OpenSans-Light-webfont.eot', 420, 436 ]
-214 silly gunzTarPerm extractEntry docs/fonts/OpenSans-Light-webfont.svg
-215 silly gunzTarPerm modified mode [ 'docs/fonts/OpenSans-Light-webfont.svg', 420, 436 ]
-216 silly gunzTarPerm extractEntry docs/fonts/OpenSans-Light-webfont.woff
-217 silly gunzTarPerm modified mode [ 'docs/fonts/OpenSans-Light-webfont.woff', 420, 436 ]
-218 silly gunzTarPerm extractEntry docs/fonts/OpenSans-LightItalic-webfont.eot
-219 silly gunzTarPerm modified mode [ 'docs/fonts/OpenSans-LightItalic-webfont.eot', 420, 436 ]
-220 silly gunzTarPerm extractEntry docs/fonts/OpenSans-Bold-webfont.svg
-221 silly gunzTarPerm modified mode [ 'docs/fonts/OpenSans-Bold-webfont.svg', 420, 436 ]
-222 silly gunzTarPerm extractEntry docs/fonts/OpenSans-LightItalic-webfont.woff
-223 silly gunzTarPerm modified mode [ 'docs/fonts/OpenSans-LightItalic-webfont.woff', 420, 436 ]
-224 silly gunzTarPerm extractEntry docs/fonts/OpenSans-Regular-webfont.eot
-225 silly gunzTarPerm modified mode [ 'docs/fonts/OpenSans-Regular-webfont.eot', 420, 436 ]
-226 silly gunzTarPerm extractEntry docs/fonts/OpenSans-Regular-webfont.svg
-227 silly gunzTarPerm modified mode [ 'docs/fonts/OpenSans-Regular-webfont.svg', 420, 436 ]
-228 silly gunzTarPerm extractEntry docs/fonts/OpenSans-Regular-webfont.woff
-229 silly gunzTarPerm modified mode [ 'docs/fonts/OpenSans-Regular-webfont.woff', 420, 436 ]
-230 silly gunzTarPerm extractEntry docs/fonts/OpenSans-Semibold-webfont.eot
-231 silly gunzTarPerm modified mode [ 'docs/fonts/OpenSans-Semibold-webfont.eot', 420, 436 ]
-232 silly gunzTarPerm extractEntry docs/fonts/OpenSans-Semibold-webfont.svg
-233 silly gunzTarPerm modified mode [ 'docs/fonts/OpenSans-Semibold-webfont.svg', 420, 436 ]
-234 silly gunzTarPerm extractEntry docs/fonts/OpenSans-Semibold-webfont.ttf
-235 silly gunzTarPerm modified mode [ 'docs/fonts/OpenSans-Semibold-webfont.ttf', 420, 436 ]
-236 silly gunzTarPerm extractEntry docs/fonts/OpenSans-Semibold-webfont.woff
-237 silly gunzTarPerm modified mode [ 'docs/fonts/OpenSans-Semibold-webfont.woff', 420, 436 ]
-238 silly gunzTarPerm extractEntry docs/fonts/OpenSans-SemiboldItalic-webfont.eot
-239 silly gunzTarPerm modified mode [ 'docs/fonts/OpenSans-SemiboldItalic-webfont.eot', 420, 436 ]
-240 silly gunzTarPerm extractEntry docs/fonts/OpenSans-SemiboldItalic-webfont.svg
-241 silly gunzTarPerm modified mode [ 'docs/fonts/OpenSans-SemiboldItalic-webfont.svg', 420, 436 ]
-242 silly gunzTarPerm extractEntry docs/fonts/OpenSans-SemiboldItalic-webfont.ttf
-243 silly gunzTarPerm modified mode [ 'docs/fonts/OpenSans-SemiboldItalic-webfont.ttf', 420, 436 ]
-244 silly gunzTarPerm extractEntry docs/fonts/OpenSans-SemiboldItalic-webfont.woff
-245 silly gunzTarPerm modified mode [ 'docs/fonts/OpenSans-SemiboldItalic-webfont.woff', 420, 436 ]
-246 silly gunzTarPerm extractEntry docs/global.html
-247 silly gunzTarPerm modified mode [ 'docs/global.html', 420, 436 ]
-248 silly gunzTarPerm extractEntry docs/index.html
-249 silly gunzTarPerm modified mode [ 'docs/index.html', 420, 436 ]
-250 silly gunzTarPerm extractEntry docs/scripts/linenumber.js
-251 silly gunzTarPerm modified mode [ 'docs/scripts/linenumber.js', 420, 436 ]
-252 silly gunzTarPerm extractEntry docs/scripts/prettify/lang-css.js
-253 silly gunzTarPerm modified mode [ 'docs/scripts/prettify/lang-css.js', 420, 436 ]
-254 silly gunzTarPerm extractEntry docs/scripts/prettify/prettify.js
-255 silly gunzTarPerm modified mode [ 'docs/scripts/prettify/prettify.js', 420, 436 ]
-256 silly gunzTarPerm extractEntry docs/scripts/prettify/Apache-License-2.0.txt
-257 silly gunzTarPerm modified mode [ 'docs/scripts/prettify/Apache-License-2.0.txt', 420, 436 ]
-258 silly gunzTarPerm extractEntry docs/simple.js.html
-259 silly gunzTarPerm modified mode [ 'docs/simple.js.html', 420, 436 ]
-260 silly gunzTarPerm extractEntry docs/styles/jsdoc-default.css
-261 silly gunzTarPerm modified mode [ 'docs/styles/jsdoc-default.css', 420, 436 ]
-262 silly gunzTarPerm extractEntry docs/styles/prettify-jsdoc.css
-263 silly gunzTarPerm modified mode [ 'docs/styles/prettify-jsdoc.css', 420, 436 ]
-264 silly gunzTarPerm extractEntry docs/styles/prettify-tomorrow.css
-265 silly gunzTarPerm modified mode [ 'docs/styles/prettify-tomorrow.css', 420, 436 ]
-266 silly gunzTarPerm extractEntry docs/tagged.js.html
-267 silly gunzTarPerm modified mode [ 'docs/tagged.js.html', 420, 436 ]
-268 silly gunzTarPerm extractEntry lib/cbor.js
-269 silly gunzTarPerm modified mode [ 'lib/cbor.js', 420, 436 ]
-270 silly gunzTarPerm extractEntry lib/commented.js
-271 silly gunzTarPerm modified mode [ 'lib/commented.js', 420, 436 ]
-272 silly gunzTarPerm extractEntry lib/constants.js
-273 silly gunzTarPerm modified mode [ 'lib/constants.js', 420, 436 ]
-274 silly gunzTarPerm extractEntry lib/decoder.js
-275 silly gunzTarPerm modified mode [ 'lib/decoder.js', 420, 436 ]
-276 silly gunzTarPerm extractEntry lib/diagnose.js
-277 silly gunzTarPerm modified mode [ 'lib/diagnose.js', 420, 436 ]
-278 silly gunzTarPerm extractEntry lib/encoder.js
-279 silly gunzTarPerm modified mode [ 'lib/encoder.js', 420, 436 ]
-280 silly gunzTarPerm extractEntry lib/simple.js
-281 silly gunzTarPerm modified mode [ 'lib/simple.js', 420, 436 ]
-282 silly gunzTarPerm extractEntry lib/tagged.js
-283 silly gunzTarPerm modified mode [ 'lib/tagged.js', 420, 436 ]
-284 silly gunzTarPerm extractEntry lib/utils.js
-285 silly gunzTarPerm modified mode [ 'lib/utils.js', 420, 436 ]
-286 silly gunzTarPerm extractEntry man/cbor2comment.1.gz
-287 silly gunzTarPerm modified mode [ 'man/cbor2comment.1.gz', 420, 436 ]
-288 silly gunzTarPerm extractEntry man/cbor2diag.1.gz
-289 silly gunzTarPerm modified mode [ 'man/cbor2diag.1.gz', 420, 436 ]
-290 silly gunzTarPerm extractEntry man/cbor2json.1.gz
-291 silly gunzTarPerm modified mode [ 'man/cbor2json.1.gz', 420, 436 ]
-292 silly gunzTarPerm extractEntry man/json2cbor.1.gz
-293 silly gunzTarPerm modified mode [ 'man/json2cbor.1.gz', 420, 436 ]
-294 silly gunzTarPerm extractEntry man_src/cbor2comment.md
-295 silly gunzTarPerm modified mode [ 'man_src/cbor2comment.md', 420, 436 ]
-296 silly gunzTarPerm extractEntry man_src/cbor2diag.md
-297 silly gunzTarPerm modified mode [ 'man_src/cbor2diag.md', 420, 436 ]
-298 silly gunzTarPerm extractEntry man_src/cbor2json.md
-299 silly gunzTarPerm modified mode [ 'man_src/cbor2json.md', 420, 436 ]
-300 silly gunzTarPerm extractEntry man_src/json2cbor.md
-301 silly gunzTarPerm modified mode [ 'man_src/json2cbor.md', 420, 436 ]
-302 silly gunzTarPerm extractEntry test/cases.js
-303 silly gunzTarPerm modified mode [ 'test/cases.js', 420, 436 ]
-304 silly gunzTarPerm extractEntry test/commented.ava.js
-305 silly gunzTarPerm modified mode [ 'test/commented.ava.js', 420, 436 ]
-306 silly gunzTarPerm extractEntry test/decoder.ava.js
-307 silly gunzTarPerm modified mode [ 'test/decoder.ava.js', 420, 436 ]
-308 silly gunzTarPerm extractEntry test/diagnose.ava.js
-309 silly gunzTarPerm modified mode [ 'test/diagnose.ava.js', 420, 436 ]
-310 silly gunzTarPerm extractEntry test/encoder.ava.js
-311 silly gunzTarPerm modified mode [ 'test/encoder.ava.js', 420, 436 ]
-312 silly gunzTarPerm extractEntry test/garbage.ava.js
-313 silly gunzTarPerm modified mode [ 'test/garbage.ava.js', 420, 436 ]
-314 silly gunzTarPerm extractEntry test/simple.ava.js
-315 silly gunzTarPerm modified mode [ 'test/simple.ava.js', 420, 436 ]
-316 silly gunzTarPerm extractEntry test/tagged.ava.js
-317 silly gunzTarPerm modified mode [ 'test/tagged.ava.js', 420, 436 ]
-318 silly gunzTarPerm extractEntry test/utils.ava.js
-319 silly gunzTarPerm modified mode [ 'test/utils.ava.js', 420, 436 ]
-320 silly gunzTarPerm extractEntry vendor/binary-parse-stream/package.json
-321 silly gunzTarPerm modified mode [ 'vendor/binary-parse-stream/package.json', 420, 436 ]
-322 silly gunzTarPerm extractEntry vendor/binary-parse-stream/README.md
-323 silly gunzTarPerm modified mode [ 'vendor/binary-parse-stream/README.md', 420, 436 ]
-324 silly gunzTarPerm extractEntry vendor/binary-parse-stream/index.js
-325 silly gunzTarPerm modified mode [ 'vendor/binary-parse-stream/index.js', 420, 436 ]
-326 silly gunzTarPerm extractEntry vendor/binary-parse-stream/.jshintrc
-327 silly gunzTarPerm modified mode [ 'vendor/binary-parse-stream/.jshintrc', 420, 436 ]
-328 silly gentlyRm /home/glikson/transit/node-red/template/node_modules/.staging/cbor-f1f195e9/node_modules is being purged
-329 verbose gentlyRm don't care about contents; nuking /home/glikson/transit/node-red/template/node_modules/.staging/cbor-f1f195e9/node_modules
-330 silly doParallel preinstall 2
-331 silly preinstall cbor@3.0.0 /home/glikson/transit/node-red/template/node_modules/.staging/cbor-f1f195e9
-332 info lifecycle cbor@3.0.0~preinstall: cbor@3.0.0
-333 silly preinstall zlib@1.0.5 /home/glikson/transit/node-red/template/node_modules/.staging/zlib-c66fb048
-334 info lifecycle zlib@1.0.5~preinstall: zlib@1.0.5
-335 silly lifecycle cbor@3.0.0~preinstall: no script for preinstall, continuing
-336 verbose lifecycle zlib@1.0.5~preinstall: unsafe-perm in lifecycle true
-337 verbose lifecycle zlib@1.0.5~preinstall: PATH: /usr/share/npm/bin/node-gyp-bin:/home/glikson/transit/node-red/template/node_modules/.staging/zlib-c66fb048/node_modules/.bin:/home/glikson/transit/node-red/template/node_modules/.bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
-338 verbose lifecycle zlib@1.0.5~preinstall: CWD: /home/glikson/transit/node-red/template/node_modules/.staging/zlib-c66fb048
-339 silly lifecycle zlib@1.0.5~preinstall: Args: [ '-c', 'node-waf clean || true; node-waf configure build' ]
-340 info lifecycle zlib@1.0.5~preinstall: Failed to exec preinstall script
-341 verbose unlock done using /home/glikson/.npm/_locks/staging-8690739665a1a624.lock for /home/glikson/transit/node-red/template/node_modules/.staging
-342 silly rollbackFailedOptional Starting
-343 silly rollbackFailedOptional Finishing
-344 silly runTopLevelLifecycles Starting
-345 silly runTopLevelLifecycles Finishing
-346 silly install printInstalled
-347 warn enoent ENOENT: no such file or directory, open '/home/glikson/transit/node-red/template/package.json'
-348 warn template No description
-349 warn template No repository field.
-350 warn template No README data
-351 warn template No license field.
-352 verbose stack Error: zlib@1.0.5 preinstall: `node-waf clean || true; node-waf configure build`
-352 verbose stack spawn ENOENT
-352 verbose stack     at ChildProcess.<anonymous> (/usr/share/npm/lib/utils/spawn.js:17:16)
-352 verbose stack     at emitTwo (events.js:87:13)
-352 verbose stack     at ChildProcess.emit (events.js:172:7)
-352 verbose stack     at maybeClose (internal/child_process.js:821:16)
-352 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
-353 verbose pkgid zlib@1.0.5
-354 verbose cwd /home/glikson/transit/node-red/template
-355 error Linux 4.4.0-53-generic
-356 error argv "/usr/bin/nodejs" "/usr/bin/npm" "install" "zlib"
-357 error node v4.2.6
-358 error npm  v3.5.2
-359 error file sh
-360 error code ELIFECYCLE
-361 error errno ENOENT
-362 error syscall spawn
-363 error zlib@1.0.5 preinstall: `node-waf clean || true; node-waf configure build`
-363 error spawn ENOENT
-364 error Failed at the zlib@1.0.5 preinstall script 'node-waf clean || true; node-waf configure build'.
-364 error Make sure you have the latest version of node.js and npm installed.
-364 error If you do, this is most likely a problem with the zlib package,
-364 error not with npm itself.
-364 error Tell the author that this fails on your system:
-364 error     node-waf clean || true; node-waf configure build
-364 error You can get information on how to open an issue for this project with:
-364 error     npm bugs zlib
-364 error Or if that isn't available, you can get their info via:
-364 error     npm owner ls zlib
-364 error There is likely additional logging output above.
-365 verbose exit [ 1, true ]
+106 silly gunzTarPerm modes [ '775', '664' ]
+107 silly gunzTarPerm modes [ '775', '664' ]
+108 silly gunzTarPerm extractEntry package.json
+109 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
+110 silly gunzTarPerm extractEntry .gitignore
+111 silly gunzTarPerm modified mode [ '.gitignore', 420, 436 ]
+112 silly gunzTarPerm extractEntry README.md
+113 silly gunzTarPerm modified mode [ 'README.md', 420, 436 ]
+114 silly gunzTarPerm extractEntry LICENSE
+115 silly gunzTarPerm modified mode [ 'LICENSE', 420, 436 ]
+116 silly gunzTarPerm extractEntry configure
+117 silly gunzTarPerm modified mode [ 'configure', 493, 509 ]
+118 silly gunzTarPerm extractEntry index.js
+119 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+120 silly gunzTarPerm extractEntry LICENSE
+121 silly gunzTarPerm modified mode [ 'LICENSE', 420, 436 ]
+122 silly gunzTarPerm extractEntry Makefile
+123 silly gunzTarPerm modified mode [ 'Makefile', 420, 436 ]
+124 silly gunzTarPerm extractEntry .idea/.name
+125 silly gunzTarPerm modified mode [ '.idea/.name', 420, 436 ]
+126 silly gunzTarPerm extractEntry .idea/deployment.xml
+127 silly gunzTarPerm modified mode [ '.idea/deployment.xml', 420, 436 ]
+128 silly gunzTarPerm extractEntry package.json
+129 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
+130 silly gunzTarPerm extractEntry README.md
+131 silly gunzTarPerm modified mode [ 'README.md', 420, 436 ]
+132 silly gunzTarPerm extractEntry .idea/encodings.xml
+133 silly gunzTarPerm modified mode [ '.idea/encodings.xml', 420, 436 ]
+134 silly gunzTarPerm extractEntry .idea/modules.xml
+135 silly gunzTarPerm modified mode [ '.idea/modules.xml', 420, 436 ]
+136 silly gunzTarPerm extractEntry wscript
+137 silly gunzTarPerm modified mode [ 'wscript', 420, 436 ]
+138 silly gunzTarPerm extractEntry lib/zlib.js
+139 silly gunzTarPerm modified mode [ 'lib/zlib.js', 420, 436 ]
+140 silly gunzTarPerm extractEntry .idea/node-red-contrib-file-function.iml
+141 silly gunzTarPerm modified mode [ '.idea/node-red-contrib-file-function.iml', 420, 436 ]
+142 silly gunzTarPerm extractEntry .idea/scopes/scope_settings.xml
+143 silly gunzTarPerm modified mode [ '.idea/scopes/scope_settings.xml', 420, 436 ]
+144 silly gunzTarPerm extractEntry src/node-zlib.cc
+145 silly gunzTarPerm modified mode [ 'src/node-zlib.cc', 420, 436 ]
+146 silly gunzTarPerm extractEntry test/deflate.test.js
+147 silly gunzTarPerm modified mode [ 'test/deflate.test.js', 420, 436 ]
+148 silly gunzTarPerm extractEntry test/inflate.test.js
+149 silly gunzTarPerm modified mode [ 'test/inflate.test.js', 420, 436 ]
+150 silly gunzTarPerm extractEntry .idea/vcs.xml
+151 silly gunzTarPerm modified mode [ '.idea/vcs.xml', 420, 436 ]
+152 silly gunzTarPerm extractEntry .idea/workspace.xml
+153 silly gunzTarPerm modified mode [ '.idea/workspace.xml', 420, 436 ]
+154 silly gunzTarPerm extractEntry docs/screenshot-flow.png
+155 silly gunzTarPerm modified mode [ 'docs/screenshot-flow.png', 420, 436 ]
+156 silly gunzTarPerm extractEntry docs/screenshot-settings.png
+157 silly gunzTarPerm modified mode [ 'docs/screenshot-settings.png', 420, 436 ]
+158 silly gunzTarPerm extractEntry file-function/file-function.js
+159 silly gunzTarPerm modified mode [ 'file-function/file-function.js', 420, 436 ]
+160 silly gunzTarPerm extractEntry file-function/file-function.html
+161 silly gunzTarPerm modified mode [ 'file-function/file-function.html', 420, 436 ]
+162 silly gunzTarPerm extractEntry file-function/icons/file-function-icon.png
+163 silly gunzTarPerm modified mode [ 'file-function/icons/file-function-icon.png', 420, 436 ]
+164 silly gentlyRm /home/glikson/transit/node-red/template/node_modules/.staging/zlib-c66fb048/node_modules is being purged
+165 verbose gentlyRm don't care about contents; nuking /home/glikson/transit/node-red/template/node_modules/.staging/zlib-c66fb048/node_modules
+166 silly gentlyRm /home/glikson/transit/node-red/template/node_modules/.staging/node-red-contrib-file-function-ead16647/node_modules is being purged
+167 verbose gentlyRm don't care about contents; nuking /home/glikson/transit/node-red/template/node_modules/.staging/node-red-contrib-file-function-ead16647/node_modules
+168 silly doParallel preinstall 2
+169 silly preinstall node-red-contrib-file-function@1.1.2 /home/glikson/transit/node-red/template/node_modules/.staging/node-red-contrib-file-function-ead16647
+170 info lifecycle node-red-contrib-file-function@1.1.2~preinstall: node-red-contrib-file-function@1.1.2
+171 silly preinstall zlib@1.0.5 /home/glikson/transit/node-red/template/node_modules/.staging/zlib-c66fb048
+172 info lifecycle zlib@1.0.5~preinstall: zlib@1.0.5
+173 silly lifecycle node-red-contrib-file-function@1.1.2~preinstall: no script for preinstall, continuing
+174 verbose lifecycle zlib@1.0.5~preinstall: unsafe-perm in lifecycle true
+175 verbose lifecycle zlib@1.0.5~preinstall: PATH: /usr/share/npm/bin/node-gyp-bin:/home/glikson/transit/node-red/template/node_modules/.staging/zlib-c66fb048/node_modules/.bin:/home/glikson/transit/node-red/template/node_modules/.bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+176 verbose lifecycle zlib@1.0.5~preinstall: CWD: /home/glikson/transit/node-red/template/node_modules/.staging/zlib-c66fb048
+177 silly lifecycle zlib@1.0.5~preinstall: Args: [ '-c', 'node-waf clean || true; node-waf configure build' ]
+178 info lifecycle zlib@1.0.5~preinstall: Failed to exec preinstall script
+179 verbose unlock done using /home/glikson/.npm/_locks/staging-8690739665a1a624.lock for /home/glikson/transit/node-red/template/node_modules/.staging
+180 silly rollbackFailedOptional Starting
+181 silly rollbackFailedOptional Finishing
+182 silly runTopLevelLifecycles Starting
+183 silly runTopLevelLifecycles Finishing
+184 silly install printInstalled
+185 warn enoent ENOENT: no such file or directory, open '/home/glikson/transit/node-red/template/package.json'
+186 warn template No description
+187 warn template No repository field.
+188 warn template No README data
+189 warn template No license field.
+190 verbose stack Error: zlib@1.0.5 preinstall: `node-waf clean || true; node-waf configure build`
+190 verbose stack spawn ENOENT
+190 verbose stack     at ChildProcess.<anonymous> (/usr/share/npm/lib/utils/spawn.js:17:16)
+190 verbose stack     at emitTwo (events.js:87:13)
+190 verbose stack     at ChildProcess.emit (events.js:172:7)
+190 verbose stack     at maybeClose (internal/child_process.js:821:16)
+190 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
+191 verbose pkgid zlib@1.0.5
+192 verbose cwd /home/glikson/transit/node-red/template
+193 error Linux 4.4.0-53-generic
+194 error argv "/usr/bin/nodejs" "/usr/bin/npm" "install" "zlib"
+195 error node v4.2.6
+196 error npm  v3.5.2
+197 error file sh
+198 error code ELIFECYCLE
+199 error errno ENOENT
+200 error syscall spawn
+201 error zlib@1.0.5 preinstall: `node-waf clean || true; node-waf configure build`
+201 error spawn ENOENT
+202 error Failed at the zlib@1.0.5 preinstall script 'node-waf clean || true; node-waf configure build'.
+202 error Make sure you have the latest version of node.js and npm installed.
+202 error If you do, this is most likely a problem with the zlib package,
+202 error not with npm itself.
+202 error Tell the author that this fails on your system:
+202 error     node-waf clean || true; node-waf configure build
+202 error You can get information on how to open an issue for this project with:
+202 error     npm bugs zlib
+202 error Or if that isn't available, you can get their info via:
+202 error     npm owner ls zlib
+202 error There is likely additional logging output above.
+203 verbose exit [ 1, true ]

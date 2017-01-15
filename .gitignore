@@ -1,2 +1,3 @@
 *.zip
 mhpost.json
+node_red/data-*
