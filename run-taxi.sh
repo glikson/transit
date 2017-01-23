@@ -14,8 +14,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# This script creates a Docker container which acts as a virtual IoT
-# gateway.
+# This script creates a Docker container which acts as a device simulating
+# a taxi vehicle.
 # Once running, the sensor readings are sent to Watson IoT Platform via MQTT.
 # IMPORTANT: IoT Platform credentials must be specified in 'iotp.env'
 #
