@@ -62,10 +62,10 @@ function main(params) {
 					deviceId: key.deviceId,
 					eventType: key.eventType,
 					timestamp: key.timestamp.substr(0,19),
-					sensorData: sensorReadings[j]
+					sensorData: JSON.parse(sensorReadings[j])
 					};
 				out.push(newmsg);
-				console.log("result: " + newmsg);
+				console.log("result: " + JSON.stringify(newmsg));
 			}
 		}
 		resolve({ "messages": out });
