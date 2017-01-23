@@ -169,9 +169,6 @@ module.exports = {
     //    context.global.os
 
     functionGlobalContext: {
-//	pouchdb:require('pouchdb-node'),
-//	jszip:require('jszip')
-//	cbor:require('cbor'),
 	zlib:require('zlib')
     },
 
