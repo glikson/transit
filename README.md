@@ -12,6 +12,7 @@ In a nutshell, the data flow is as follows:
 3. An OpenWhisk feed retrieves messages from Message Hub (in small batches) and forwards them to an action sequence, comprising `transformation` and sending the results to Message Hub (different topic)
 4. Message Hub archives messages from the above topic in batches to Object Storage (using a dedicated bridge)
 5. The data in Object Storage can be retrieved on-demand from a Jupyter Notebook within the Spark Service (e.g., via Spark SQL interface)
+![TRANSIT data flow](transit-flow.png)
 
 In order to enable the above pipeline, the following configuration steps are needed:
 
