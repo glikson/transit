@@ -1,6 +1,7 @@
 ## TRANSIT: serverless TRANsformation of hiStorical IoT data
 
 The TRANSIT project demonstrates the use of OpenWhisk for programmable transformation of messages in an IoT ingest pipeline comprising the Watson IoT Platform, Message Hub and Object Storage.
+See the [blog](https://medium.com/openwhisk/transit-flexible-pipeline-for-iot-data-with-bluemix-and-openwhisk-4824cf20f1e0) for more details.
 
 The architecture of TRANSIT is shown on the following diagram:
 ![TRANSIT Architecture](transit-arch.png)
